@@ -5,7 +5,7 @@
   "author": "Terra <engineering@terra.money> (https://terra.money)",
   "build": {
     "appId": "money.terra.station",
-    "productName": "Terra Station",
+    "productName": "Terra Station (Staging)",
     "copyright": "Copyright © 2019 ${author}",
     "mac": {
       "target": "dmg",

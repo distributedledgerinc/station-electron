@@ -16,9 +16,7 @@ const createWindow = () => {
     webPreferences: { nodeIntegration: true, webSecurity: false }
   }
 
-  const url = process.env.LOCAL
-    ? 'http://localhost:3000'
-    : 'https://station.terra.money'
+  const url = 'https://station-simcheolhwan.terra-project.now.sh'
 
   win = new BrowserWindow(config)
   win.removeMenu()
