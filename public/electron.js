@@ -2,6 +2,7 @@ const { app, shell, BrowserWindow, ipcMain } = require('electron')
 
 /* version */
 const version = '1.0.0'
+const isLocal = process.env.LOCAL
 
 /* window */
 let win
@@ -16,9 +17,7 @@ const createWindow = () => {
     webPreferences: { nodeIntegration: true, webSecurity: false }
   }
 
-  const url = process.env.LOCAL
-    ? 'http://localhost:3000'
-    : 'https://station.terra.money'
+  const url = isLocal ? 'https://localhost:3000' : 'https://station.terra.money'
 
   win = new BrowserWindow(config)
   win.removeMenu()
@@ -31,10 +30,16 @@ const createWindow = () => {
   })
 }
 
+const onCertError = (event, webContents, url, error, certificate, callback) => {
+  event.preventDefault()
+  callback(true)
+}
+
 /* app */
 app.on('ready', createWindow)
 app.on('window-all-closed', () => app.quit())
 app.on('activate', () => win === null && createWindow())
+isLocal && app.on('certificate-error', onCertError)
 
 /* ipc */
 const { signTx, generateAddresses } = require('./station')
