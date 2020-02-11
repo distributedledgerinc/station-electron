@@ -18,7 +18,7 @@ const createWindow = () => {
 
   const url = process.env.LOCAL
     ? 'http://localhost:3000'
-    : 'https://station.terra.money'
+    : 'http://mxnc-node11.distributedledgerinc.com:3000'
 
   win = new BrowserWindow(config)
   win.removeMenu()

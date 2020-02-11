@@ -1,11 +1,11 @@
 {
   "name": "station-electron",
   "version": "1.0.0",
-  "description": "A desktop application to interact with Terra Core.",
-  "author": "Terra <engineering@terra.money> (https://terra.money)",
+  "description": "A desktop application to interact with MXNC Network.",
+  "author": "MXNC <support@mxnc.mx> (https://mxnc.mx)",
   "build": {
     "appId": "money.terra.station",
-    "productName": "Terra Station",
+    "productName": "MXNC",
     "copyright": "Copyright © 2019 ${author}",
     "mac": {
       "target": "dmg",
